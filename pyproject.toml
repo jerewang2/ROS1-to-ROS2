@@ -4,5 +4,5 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "ROS Documentation"
-authors = [{name = "Jeremy", email = "jerewang@seas.upenn.edu"}]
+authors = [{name = "Jeremy Wang", email = "jerewang@seas.upenn.edu"}]
 dynamic = ["version", "description"]
