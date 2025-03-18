@@ -12,5 +12,4 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   translation
