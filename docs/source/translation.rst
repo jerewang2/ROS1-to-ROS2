@@ -67,3 +67,15 @@ ROS1 Example
   23     listener()
 
 =====
+
+
+.. _servers:
+
+Action Servers
+------------
+
+ROS1 Example
+
+.. code-block:: console
+
+=====
