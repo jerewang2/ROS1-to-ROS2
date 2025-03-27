@@ -1,10 +1,10 @@
 Translation
-=====
+===========
 
 .. _publishers:
 
 Publishers
-------------
+-----------
 
 ROS1 Example
 
@@ -31,12 +31,12 @@ ROS1 Example
   19     except rospy.ROSInterruptException:
   20         pass
 
-=====
+===========
 
 .. _subscribers:
 
 Subscribers
-------------
+-----------
 
 ROS1 Example
 
@@ -66,16 +66,16 @@ ROS1 Example
   22 if __name__ == '__main__':
   23     listener()
 
-=====
+===========
 
 
 .. _servers:
 
 Action Servers
-------------
+--------------
 
 ROS1 Example
 
 .. code-block:: console
 
-=====
+===========
