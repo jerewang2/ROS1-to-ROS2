@@ -41,3 +41,4 @@ epub_show_urls = 'footnote'
 print("Testing in config.")
 
 csv2doc.hello_world()
+csv2doc.generate_rst_file(csv2doc.read_csv('data.csv'))
