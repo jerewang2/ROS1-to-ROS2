@@ -1,4 +1,6 @@
 # Configuration file for the Sphinx documentation builder.
+import sys
+sys.path.insert(1, '../..')
 import csv2doc
 
 # -- Project information
