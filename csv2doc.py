@@ -14,3 +14,6 @@ def generate_rst_file(data):
             file.write(f".. _{item['ROS1_name']}:\n\n")
             file.write(f"{item['ROS1_name']} - {item['ROS1_description']}\n\n")
             file.write(f"Equivalent ROS2 code: {item['ROS2_code']}\n")
+
+def hello_world():
+    print("Hello World!")

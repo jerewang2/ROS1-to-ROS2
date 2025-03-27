@@ -1,4 +1,5 @@
 # Configuration file for the Sphinx documentation builder.
+import csv2doc
 
 # -- Project information
 
@@ -34,4 +35,7 @@ html_theme = 'sphinx_rtd_theme'
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
 
+# Start main script
 print("Testing in config.")
+
+csv2doc.hello_world()
