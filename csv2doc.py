@@ -9,7 +9,7 @@ def read_csv(file_path):
     return data
 
 def generate_rst_file(data):
-    with open('output_file.rst', 'w') as file:
+    with open('/docs/source/translation.rst', 'w') as file:
         for item in data:
             file.write(f"{item}:\n")
 
