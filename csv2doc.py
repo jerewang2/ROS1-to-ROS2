@@ -35,7 +35,7 @@ def preprocess_csv(file_path):
         print(ros2_text)
 
 
-def process_permalink(raw_link):
+def process_permalink(permalink):
     permalink = re.sub(r'^https://github\.com/', 'https://raw.githubusercontent.com/', permalink)
     permalink = re.sub(r'/blob/', '/', permalink)
 
