@@ -1,3 +1,3 @@
-Name of Subsection, Code snippet in ROS1, Code snippet in ROS2, Description
+Name of Subsection, ROS1 Permalink, ROS2 Permalink, Description
 Test 1, https://github.com/KumarRobotics/kr_mav_control/blob/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp#L23-L29, https://github.com/KumarRobotics/kr_mav_control/blob/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp#L30C2-L32C4, Description for Test 1
 Test 2, https://github.com/KumarRobotics/kr_mav_control/blob/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp#L38C5-L44C20, https://github.com/KumarRobotics/kr_mav_control/blob/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp#L53C4-L60C43, Description for Test 2
