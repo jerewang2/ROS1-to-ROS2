@@ -48,5 +48,3 @@ def process_permalink(permalink):
         snippet_text = "\n".join(snippet)
 
         return snippet_text
-
-    return None
