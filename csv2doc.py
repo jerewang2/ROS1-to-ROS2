@@ -28,11 +28,8 @@ def preprocess_csv(file_path):
         ros2_link2 = row['ROS2 Permalink']
         description = row['Description']
 
-        ros1_text = process_permalink(ros1_link1)
-        ros2_text = process_permalink(ros2_link2)
-
-        print(ros1_text)
-        print(ros2_text)
+        print(process_permalink(ros1_link1))
+        print(process_permalink(ros2_link2)) 
 
 
 def process_permalink(permalink):
