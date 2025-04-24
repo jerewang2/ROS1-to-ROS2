@@ -42,9 +42,8 @@ print("Testing in config.")
 
 path = '../../data.csv'
 
-result = csv2doc.preprocess_csv(path)
+csv2doc.preprocess_csv(path)
 
-print(result)
 # csv2doc.generate_rst_file(csv2doc.read_csv('../../data.csv'))
 
 print("End of script...")
