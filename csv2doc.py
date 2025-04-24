@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import requests # type: ignore
 import re
+import urllib.request
 
 # def read_csv(file_path):
 #     data = []
@@ -50,12 +51,18 @@ def process_permalink(permalink):
 
         print(f'New permalink: {permalink}')
 
-        lines_of_code = requests.get(permalink).text.splitlines()
+        with urllib.request.urlopen(permalink) as response:
+            file_content = response.read().decode('utf-8')
+            lines = file_content.splitlines()
+            snippet = lines[start - 1:end]
+            snippet_text = "\n".join(snippet)
 
-        print(f'Lines of code: {lines_of_code}')
-        
-        snippet = lines_of_code[start - 1:end]
-        snippet_text = "\n".join(snippet)
+        # lines_of_code = requests.get(permalink).text.splitlines()
+
+        # print(f'Lines of code: {lines_of_code}')
+
+        # snippet = lines_of_code[start - 1:end]
+        # snippet_text = "\n".join(snippet)
 
         print(f'Snippet: {snippet_text}')
         return snippet_text
