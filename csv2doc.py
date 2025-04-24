@@ -38,15 +38,19 @@ def process_permalink(permalink):
 
     match = re.search(r'#L(\d+)C\d+-L(\d+)C\d+', permalink)
 
-    print(permalink)
+    print(f'Permalink: {permalink}')
+    print(f'Match: {match}')
     if match:
         start = int(match.group(1))
         end = int(match.group(2))
 
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
 
+        print(f'New permalink: {permalink}')
+
         lines_of_code = requests.get(permalink).text.splitlines()
         snippet = lines_of_code[start - 1:end]
         snippet_text = "\n".join(snippet)
 
+        print(f'Snippet: {snippet_text}')
         return snippet_text
