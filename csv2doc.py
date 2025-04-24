@@ -37,6 +37,8 @@ def process_permalink(permalink):
     permalink = re.sub(r'/blob/', '/', permalink)
 
     match = re.search(r'#L(\d+)C\d+-L(\d+)C\d+', permalink)
+
+    print(permalink)
     if match:
         start = int(match.group(1))
         end = int(match.group(2))
