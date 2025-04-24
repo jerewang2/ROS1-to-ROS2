@@ -21,13 +21,16 @@ def hello_world():
 
 def preprocess_csv(file_path):
     df = pd.read_csv(file_path)
-    print(df)
     
     for index, row in df.iterrows():
         subsection = row['Name of Subsection']
         ros1_link1 = row['ROS1 Permalink']
         ros2_link2 = row['ROS2 Permalink']
         description = row['Description']
+
+        final = process_permalink(ros1_link1)
+
+        return final
 
 def process_permalink(permalink):
     permalink = re.sub(r'^https://github\.com/', 'https://raw.githubusercontent.com/', permalink)
