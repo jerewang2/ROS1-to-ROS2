@@ -25,7 +25,7 @@ def generate_rst_file(data):
 
         .. code-block:: console
 
-        {data[1]}
+            {data[1]}
 
         ===========
         
@@ -77,6 +77,6 @@ def process_permalink(permalink):
 
         print(f'Snippet: {snippet_text}')
 
-        snippet_text = '#include <dynamic_reconfigure/server.h>\n#include <geometry_msgs/PoseStamped.h>\n#include <kr_mav_controllers/SO3Config.h>'
+        snippet_text = '1 #include <dynamic_reconfigure/server.h>\n2 #include <geometry_msgs/PoseStamped.h>\n3 #include <kr_mav_controllers/SO3Config.h>'
 
         return snippet_text
