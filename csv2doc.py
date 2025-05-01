@@ -23,12 +23,16 @@ def generate_rst_file(data):
 
         ROS1 Example
 
-        .. code-block:: console"""
+        .. code-block:: console
+
+        {data[1]}
+
+        ===========
+        
+        {data[2]}
+        """
 
         file.write(rst_content)
-        file.write(f"{data[1]}\n")
-        file.write('===========')
-        file.write(f"{data[2]}")
 
 def hello_world():
     print("Hello World!")
@@ -73,8 +77,6 @@ def process_permalink(permalink):
 
         print(f'Snippet: {snippet_text}')
 
-        snippet_text = '''#include <dynamic_reconfigure/server.h>
-        #include <geometry_msgs/PoseStamped.h>
-        # #include <kr_mav_controllers/SO3Config.h>'''
+        snippet_text = '#include <dynamic_reconfigure/server.h>\n#include <geometry_msgs/PoseStamped.h>\n#include <kr_mav_controllers/SO3Config.h>'
 
         return snippet_text
