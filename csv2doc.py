@@ -25,9 +25,10 @@ def generate_rst_file(data):
 
         .. code-block:: console"""
 
+        file.write("Content")
         file.write(rst_content)
         file.write(f"{data[1]}\n")
-        file.write(f"Description: {data[2]}")
+        file.write(f"{data[2]}")
 
 def hello_world():
     print("Hello World!")
@@ -72,6 +73,8 @@ def process_permalink(permalink):
 
         print(f'Snippet: {snippet_text}')
 
-        snippet_text = '#include <dynamic_reconfigure/server.h>\n#include <geometry_msgs/PoseStamped.h>\n#include <kr_mav_controllers/SO3Config.h>'
+        snippet_text = '''#include <dynamic_reconfigure/server.h>
+        #include <geometry_msgs/PoseStamped.h>
+        # #include <kr_mav_controllers/SO3Config.h>'''
 
         return snippet_text
