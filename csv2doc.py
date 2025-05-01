@@ -25,9 +25,9 @@ def generate_rst_file(data):
 
         .. code-block:: console"""
 
-        file.write("Content")
         file.write(rst_content)
         file.write(f"{data[1]}\n")
+        file.write('===========')
         file.write(f"{data[2]}")
 
 def hello_world():
