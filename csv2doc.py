@@ -77,8 +77,6 @@ def process_permalink(permalink):
 
         print(f'Snippet: {snippet_text}')
 
-        snippet_text = '''1 #include <dynamic_reconfigure/server.h>
-        2 #include <geometry_msgs/PoseStamped.h>
-        3 #include <kr_mav_controllers/SO3Config.h>'''
+        snippet_text = '1 #include <dynamic_reconfigure/server.h>2 #include <geometry_msgs/PoseStamped.h>3 #include <kr_mav_controllers/SO3Config.h>'
 
         return snippet_text
