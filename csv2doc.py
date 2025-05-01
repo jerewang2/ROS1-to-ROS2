@@ -25,6 +25,7 @@ def generate_rst_file(data):
 
         .. code-block:: console"""
 
+        file.write(rst_content)
         file.write(f"{data[1]}\n")
         file.write(f"Description: {data[2]}")
 
