@@ -1,0 +1,39 @@
+name: Preprocess CSV and Generate RST
+
+on:
+  push:
+    paths:
+      - 'data.csv'
+      - 'preprocess_csv.py'
+      - '.github/workflows/preprocess.yml'
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run preprocessing script
+        run: python preprocess_csv.py
+
+      - name: Commit generated RST file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/translation.rst
+          git commit -m "Auto-update translation.rst from CSV"
+          git push
+        continue-on-error: true  # Don't fail if there's no change

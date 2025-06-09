@@ -56,27 +56,17 @@ def process_permalink(permalink):
 
     match = re.search(r'#L(\d+)C\d+-L(\d+)C\d+', permalink)
 
-    print(f'Permalink: {permalink}')
-    print(f'Match: {match}')
     if match:
         start = int(match.group(1))
         end = int(match.group(2))
 
-        print(f'Start: {start}, End: {end}')
-
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
 
-        print(f'New permalink: {permalink}')
-
         lines_of_code = requests.get(permalink).text.splitlines()
-
-        print(f'Lines of code: {lines_of_code}')
 
         snippet = lines_of_code[start - 1:end]
         snippet_text = "\n".join(snippet)
 
-        print(f'Snippet: {snippet_text}')
-
-        snippet_text = '1 #include <dynamic_reconfigure/server.h>2 #include <geometry_msgs/PoseStamped.h>3 #include <kr_mav_controllers/SO3Config.h>'
+        # snippet_text = '1 #include <dynamic_reconfigure/server.h>2 #include <geometry_msgs/PoseStamped.h>3 #include <kr_mav_controllers/SO3Config.h>'
 
         return snippet_text

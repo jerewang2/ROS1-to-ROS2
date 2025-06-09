@@ -36,14 +36,3 @@ html_theme = 'sphinx_rtd_theme'
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
-
-# Start main script
-print("Testing in config.")
-
-path = '../../data.csv'
-
-processed_data = csv2doc.preprocess_csv(path)
-
-csv2doc.generate_rst_file(processed_data)
-
-print("End of script...")
