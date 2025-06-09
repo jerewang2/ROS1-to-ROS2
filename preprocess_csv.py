@@ -18,6 +18,7 @@ def process_permalink(permalink):
             lines_of_code = response.text.splitlines()
             snippet = lines_of_code[start - 1:end]
             return "\n".join(snippet)
+            
         except Exception as e:
             print(f"Error fetching code from {permalink}: {e}")
             return ""
@@ -52,6 +53,11 @@ def indent_code(code):
     return '\n'.join(f'   {line}' for line in code.splitlines())
 
 def main():
+    path = '../../data.csv'
+
+    processed_data = csv2doc.preprocess_csv(path)
+    csv2doc.generate_rst_file(processed_data)
+    
     with open('translation.rst', 'w') as rstfile:
         rstfile.write("Translation\n===========\n\n")
 
