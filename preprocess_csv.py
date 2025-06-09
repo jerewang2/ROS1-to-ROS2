@@ -53,10 +53,10 @@ def indent_code(code):
     return '\n'.join(f'   {line}' for line in code.splitlines())
 
 def main():
-    path = '../../data.csv'
+    # path = '../../data.csv'
 
-    processed_data = csv2doc.preprocess_csv(path)
-    csv2doc.generate_rst_file(processed_data)
+    # processed_data = csv2doc.preprocess_csv(path)
+    # csv2doc.generate_rst_file(processed_data)
     
     with open('translation.rst', 'w') as rstfile:
         rstfile.write("Translation\n===========\n\n")
