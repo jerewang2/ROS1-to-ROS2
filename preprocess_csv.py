@@ -43,7 +43,7 @@ def preprocess_csv(path):
     return sections
 
 def generate_rst_file(sections):
-    output_path = os.path.join("docs", "translation.rst")
+    output_path = os.path.join("docs/source", "translation.rst")
     with open(output_path, 'w') as file:
         file.write("Translation\n")
         file.write("===========\n\n")
