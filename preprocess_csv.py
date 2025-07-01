@@ -12,13 +12,8 @@ def process_permalink(permalink):
         end = int(match.group(2))
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
 
-        print(f"Fetching: {permalink}")
-        response = requests.get(permalink)
-        print(f"Status code: {response.status_code}")
+        return permalink
 
-        # return permalink
-
-        # response = requests.get('https://raw.githubusercontent.com/KumarRobotics/kr_mav_control/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp')
         # response = requests.get(permalink)
         response = requests.get('https://raw.githubusercontent.com/KumarRobotics/kr_mav_control/e9b25e3c95efc9888905b461ec5a44be7447b225/kr_mav_controllers/src/so3_control_nodelet.cpp')
         if response.status_code != 200:
