@@ -3,6 +3,7 @@ import requests
 import re
 
 def process_permalink(permalink):
+    return permalink
     permalink = re.sub(r'^https://github\.com/', 'https://raw.githubusercontent.com/', permalink)
     permalink = re.sub(r'/blob/', '/', permalink)
     match = re.search(r'#L(\d+)C\d+-L(\d+)C\d+', permalink)
@@ -11,6 +12,8 @@ def process_permalink(permalink):
         start = int(match.group(1))
         end = int(match.group(2))
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
+
+
 
         return permalink
 
