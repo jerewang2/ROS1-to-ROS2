@@ -12,7 +12,6 @@ def process_permalink(permalink):
         end = int(match.group(2))
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
 
-
         response = requests.get(permalink)
         if response.status_code != 200:
             return f"# Failed to fetch code from: {permalink}"
