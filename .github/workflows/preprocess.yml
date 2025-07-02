@@ -29,6 +29,11 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
+      - name: Clear translation.rst contents
+        run: |
+          echo "" > docs/source/translation.rst
+          echo "Cleared translation.rst contents"
+
       - name: Run preprocessing script
         run: python preprocess_csv.py
 
