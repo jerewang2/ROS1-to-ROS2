@@ -38,13 +38,21 @@ ROS1 Example
 
 .. code-block:: console
 
-   38  private:
-   39   void publishSO3Command();
-   40   void position_cmd_callback(const kr_mav_msgs::PositionCommand::ConstPtr &cmd);
-   41   void odom_callback(const nav_msgs::Odometry::ConstPtr &odom);
-   42   void enable_motors_callback(const std_msgs::Bool::ConstPtr &msg);
-   43   void corrections_callback(const kr_mav_msgs::Corrections::ConstPtr &msg);
-   44   void cfg_callback(kr_mav_controllers::SO3Config &config, uint32_t level);
+   18  public:
+   19   SO3ControlNodelet()
+   20       : position_cmd_updated_(false),
+   21         position_cmd_init_(false),
+   22         des_yaw_(0),
+   23         des_yaw_dot_(0),
+   24         current_yaw_(0),
+   25         enable_motors_(false),
+   26         use_external_yaw_(false),
+   27         have_odom_(false),
+   28         g_(9.81),
+   29         current_orientation_(Eigen::Quaternionf::Identity())
+   30   {
+   31     controller_.resetIntegrals();
+   32   }
 
 ROS2 Example
 
