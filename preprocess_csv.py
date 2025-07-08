@@ -66,6 +66,10 @@ def indent_code(code):
     return "\n".join(f"   {line}" for line in code.splitlines())
 
 def generate_rst_file(data):
+    # Explicitly clear the file first
+    with open("docs/source/translation.rst", "w") as file:
+        file.truncate(0)
+    # Now write the new data
     with open("docs/source/translation.rst", "w") as file:
         file.write(data)
 
