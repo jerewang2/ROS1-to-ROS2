@@ -156,4 +156,4 @@ cython_debug/
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks
 
 # Constantly update translation.rst. No need to git pull before committing.
-translation.rst
+# translation.rst
