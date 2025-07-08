@@ -21,9 +21,7 @@ ROS2 Example
 
 .. code-block:: console
 
-   30   {
-   31     controller_.resetIntegrals();
-   32   }
+   # Invalid permalink
 
 ===========
 
