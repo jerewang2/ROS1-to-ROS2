@@ -17,6 +17,10 @@ ROS1 Example
    3 #include <kr_mav_controllers/SO3Config.h>
    4 #include <kr_mav_controllers/SO3Control.h>
 
+.. code-block:: console
+
+   # Invalid permalink
+
 ROS2 Example
 
 .. code-block:: console
@@ -70,5 +74,9 @@ ROS2 Example
    58   float mass_;
    59   const float g_;
    60   Eigen::Quaternionf current_orientation_;
+
+.. code-block:: console
+
+   # Invalid permalink
 
 ===========
