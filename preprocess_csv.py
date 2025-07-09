@@ -31,8 +31,8 @@ def preprocess_csv(csv_path):
         reader = csv.DictReader(csvfile)
         for row in reader:
             subsection = row['Name of Subsection']
-            ros1_link = row['ROS1 Permalink']
-            ros2_link = row['ROS2 Permalink']
+            ros1_links = row['ROS1 Permalink'].split('|')  # Split by delimiter
+            ros2_links = row['ROS2 Permalink'].split('|')  # Split by delimiter
             description = row['Description']
 
             anchor = subsection.lower().replace(" ", "_")
@@ -43,18 +43,38 @@ def preprocess_csv(csv_path):
             output.append(description)
             output.append("")
 
+            # Process ROS1 permalinks
             output.append("ROS1 Example")
             output.append("")
-            output.append(".. code-block:: console\n")
-            ros1_code = process_permalink(ros1_link)
-            output.append(indent_code(ros1_code))
+            ros1_code_blocks = []
+            for link in ros1_links:
+                if link.strip():  # Skip empty links
+                    ros1_code_blocks.append(process_permalink(link.strip()))
+            
+            if ros1_code_blocks:
+                output.append(".. code-block:: console\n")
+                for i, code_block in enumerate(ros1_code_blocks):
+                    if i > 0:  # Add separator between multiple code blocks
+                        output.append("")
+                        output.append(".. code-block:: console\n")
+                    output.append(indent_code(code_block))
             output.append("")
 
+            # Process ROS2 permalinks
             output.append("ROS2 Example")
             output.append("")
-            output.append(".. code-block:: console\n")
-            ros2_code = process_permalink(ros2_link)
-            output.append(indent_code(ros2_code))
+            ros2_code_blocks = []
+            for link in ros2_links:
+                if link.strip():  # Skip empty links
+                    ros2_code_blocks.append(process_permalink(link.strip()))
+            
+            if ros2_code_blocks:
+                output.append(".. code-block:: console\n")
+                for i, code_block in enumerate(ros2_code_blocks):
+                    if i > 0:  # Add separator between multiple code blocks
+                        output.append("")
+                        output.append(".. code-block:: console\n")
+                    output.append(indent_code(code_block))
             output.append("")
 
             output.append("=" * 11)
