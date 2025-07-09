@@ -5,21 +5,30 @@ import re
 def process_permalink(permalink):
     permalink = re.sub(r'https://github.com/', 'https://raw.githubusercontent.com/', permalink)
     permalink = re.sub(r'/blob/', '/', permalink)
+    
+    # Try to match #LstartCcol-LendCcol (with column numbers)
     match = re.search(r'#L(\d+)C\d+-L(\d+)C\d+', permalink)
-
     if match:
         start = int(match.group(1))
         end = int(match.group(2))
         permalink = re.sub(r'#L\d+C\d+-L\d+C\d+', '', permalink)
+    else:
+        # Try to match #Lstart-Lend (without column numbers)
+        match = re.search(r'#L(\d+)-L(\d+)', permalink)
+        if match:
+            start = int(match.group(1))
+            end = int(match.group(2))
+            permalink = re.sub(r'#L\d+-L\d+', '', permalink)
+        else:
+            return "# Invalid permalink"
 
-        response = requests.get(permalink)
-        if response.status_code != 200:
-            return f"# Failed to fetch code from: {permalink}"
+    response = requests.get(permalink)
+    if response.status_code != 200:
+        return f"# Failed to fetch code from: {permalink}"
 
-        lines = response.text.splitlines()
-        snippet = lines[start - 1:end]
-        return "\n".join(f"{i+start} {line}" for i, line in enumerate(snippet))
-    return "# Invalid permalink"
+    lines = response.text.splitlines()
+    snippet = lines[start - 1:end]
+    return "\n".join(f"{i+start} {line}" for i, line in enumerate(snippet))
 
 def preprocess_csv(csv_path):
     output = []
