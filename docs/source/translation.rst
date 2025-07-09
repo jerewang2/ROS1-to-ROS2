@@ -19,7 +19,14 @@ ROS1 Example
 
 .. code-block:: console
 
-   # Invalid permalink
+   53   Eigen::Vector3f des_pos_, des_vel_, des_acc_, des_jrk_, config_kx_, config_kv_, config_ki_, config_kib_, kx_, kv_;
+   54   float des_yaw_, des_yaw_dot_;
+   55   float current_yaw_;
+   56   bool enable_motors_, use_external_yaw_, have_odom_;
+   57   float kR_[3], kOm_[3], corrections_[3];
+   58   float mass_;
+   59   const float g_;
+   60   Eigen::Quaternionf current_orientation_;
 
 ROS2 Example
 
@@ -77,6 +84,13 @@ ROS2 Example
 
 .. code-block:: console
 
-   # Invalid permalink
+   53   Eigen::Vector3f des_pos_, des_vel_, des_acc_, des_jrk_, config_kx_, config_kv_, config_ki_, config_kib_, kx_, kv_;
+   54   float des_yaw_, des_yaw_dot_;
+   55   float current_yaw_;
+   56   bool enable_motors_, use_external_yaw_, have_odom_;
+   57   float kR_[3], kOm_[3], corrections_[3];
+   58   float mass_;
+   59   const float g_;
+   60   Eigen::Quaternionf current_orientation_;
 
 ===========
